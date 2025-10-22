@@ -11,102 +11,101 @@
     <meta charset="utf-8">
     <!-- bevisst: blokkerer zoom (dårlig for UU) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" >
-    <title>Hjem</title> <!-- bevisst: vag tittel -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Forside for verden beste nettside</title> 
   </head>
   <body>
-    <div class="header">
+    <header>
       <span class="logo" aria-hidden="true"></span> <!-- bevisst: viktig info kun i bilde uten tekstalternativ -->
       <span class="site-title">Min side</span>
-    </div>
+    </header>
 
-    <div class="nav" role="navigation"> <!-- bevisst: upresist role og ingen semantisk <nav> -->
+    <nav role="navigation"> <!-- bevisst: upresist role og ingen semantisk <nav> -->
       <a href="#">Hjem</a>
       <a href="#">Om oss</a>
-      <div class="dropdown">
-        <a href="#">Tjenester</a>
-        <ul>
-          <li><a href="#">Design</a></li>
-          <li><a href="#">Utvikling</a></li>
-          <li><a href="#">Konsulent</a></li>
-        </ul>
-      </div>
+        <div class="dropdown">
+          <a href="#">Tjenester</a>
+            <ul>
+              <li><a href="#">Design</a></li>
+              <li><a href="#">Utvikling</a></li>
+              <li><a href="#">Konsulent</a></li>
+            </ul>
+        </div>
       <a href="#">Kontakt</a>
-    </div>
+    </nav>
 
-    <div class="ticker">
+    <section>
       <p>Viktig beskjed: Les dette! Klikk her! Klikk her! Klikk her! Veldig viktig! ✨</p>
-    </div>
+    </section>
 
-    <table class="layout" role="presentation"> <!-- bevisst: tabell for layout -->
-      <tr>
-        <td class="sidebar">
-          <div class="card" id="sekjson">
+    
+        <aside>
+          <section>
             <h4>Nyheter</h4> <!-- bevisst: hopper over h1/h2/h3 -->
-            <p>
-              <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" alt=""> <!-- bevisst: tom alt på meningsbærende bilde -->
-              <a class="tiny-link" href="#">Klikk her</a> for å lese mer om ting.
-            </p>
-            <p class="status-ok">Tilgjengelig</p>
-            <p class="status-bad">Utilgjengelig</p>
-          </div>
+              <p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" alt=""> <!-- bevisst: tom alt på meningsbærende bilde -->
+                <a class="tiny-link" href="#">Klikk her</a> for å lese mer om ting.
+              </p>
+              <p class="status-ok">Tilgjengelig</p>
+              <p class="status-bad">Utilgjengelig</p>
+          </section>
 
-          <div class="card">
+          <section>
             <h4>Språk</h4>
-            <p>
-              <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Norway.svg" alt="no"> <!-- bevisst: alt «no» er ikke beskrivende -->
-              <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Flag_of_the_United_Kingdom.svg" alt="en">
-            </p>
-          </div>
-        </td>
-        <td>
-          <div class="hero">
+              <p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Flag_of_Norway.svg" alt="no"> <!-- bevisst: alt «no» er ikke beskrivende -->
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Flag_of_the_United_Kingdom.svg" alt="en">
+              </p>
+          </section>
+        </aside>
+
+        <main>
+          <h1>
             VELKOMMEN TIL DEN BESTE SIDEN NOENSINNE (LES VIKTIG TEKST HER OVER BAKGRUNNSBILDE)
-          </div>
+          </h1>
+          <section>
+            <h2>Denne teksten er veldig vanskelig å lese fordi den er smal, i store bokstaver og har lav kontrast. Den er også justert med blokkjustering som kan skape store mellomrom i linjene. Klikk her for mer info.</h2>
 
-          <div class="card shout">
-            <div class="narrow">
-              Denne teksten er veldig vanskelig å lese fordi den er smal, i store bokstaver og har lav kontrast. Den er også justert med blokkjustering som kan skape store mellomrom i linjene. Klikk her for mer info.
+
+            <div class="card form">
+              <h4>Kontakt oss</h4>
+              <!-- bevisst: ingen <label> og kun placeholder, dupliserte id-er, dårlig kontrast, farge som eneste signal -->
+              <input type="text" id="navn" placeholder="Navn*">
+              <input type="email" id="navn" placeholder="E-post*"> <!-- bevisst: duplisert id -->
+              <input type="tel" placeholder="Telefon">
+              <select>
+                <option>Velg tema*</option>
+                <option>Bestilling</option>
+                <option>Support</option>
+              </select>
+              <textarea rows="3" placeholder="Melding..."></textarea>
+              <p class="help">Felt merket med <span class="required">rød farge</span> er obligatoriske.</p>
+              <p class="error">skjemaet er feil utfylt</p> <!-- bevisst: lav kontrast på feilmelding, små bokstaver -->
+              <span class="fake-submit" role="button" tabindex="5">Send</span> <!-- bevisst: span som knapp, positiv tabindex -->
             </div>
-          </div>
 
-          <div class="card form">
-            <h4>Kontakt oss</h4>
-            <!-- bevisst: ingen <label> og kun placeholder, dupliserte id-er, dårlig kontrast, farge som eneste signal -->
-            <input type="text" id="navn" placeholder="Navn*">
-            <input type="email" id="navn" placeholder="E-post*"> <!-- bevisst: duplisert id -->
-            <input type="tel" placeholder="Telefon">
-            <select>
-              <option>Velg tema*</option>
-              <option>Bestilling</option>
-              <option>Support</option>
-            </select>
-            <textarea rows="3" placeholder="Melding..."></textarea>
-            <p class="help">Felt merket med <span class="required">rød farge</span> er obligatoriske.</p>
-            <p class="error">skjemaet er feil utfylt</p> <!-- bevisst: lav kontrast på feilmelding, små bokstaver -->
-            <span class="fake-submit" role="button" tabindex="5">Send</span> <!-- bevisst: span som knapp, positiv tabindex -->
-          </div>
+            <div class="card weird-order">
+              <h4>Mer innhold</h4>
+              <p>
+                <a href="#" tabindex="3">Les mer</a> |
+                <a href="#" tabindex="1">Klikk her</a> |
+                <a href="#" tabindex="2">Trykk her</a>
+              </p>
+              <p>
+                <span class="btn" tabindex="4">Primær handling</span>
+              </p>
+            </div>
 
-          <div class="card weird-order">
-            <h4>Mer innhold</h4>
-            <p>
-              <a href="#" tabindex="3">Les mer</a> |
-              <a href="#" tabindex="1">Klikk her</a> |
-              <a href="#" tabindex="2">Trykk her</a>
-            </p>
-            <p>
-              <span class="btn" tabindex="4">Primær handling</span>
-            </p>
-          </div>
-
-          <div class="card">
-            <h4>Tabell uten overskrifter</h4>
-            <table border="1" width="100%">
-              <tr><td>1</td><td>2</td><td>3</td></tr>
-              <tr><td>4</td><td>5</td><td>6</td></tr>
-              <tr><td>7</td><td>8</td><td>9</td></tr>
-            </table>
-          </div>
+            <div class="card">
+              <h4>Tabell uten overskrifter</h4>
+              <table border="1" width="100%">
+                <tr><td>1</td><td>2</td><td>3</td></tr>
+                <tr><td>4</td><td>5</td><td>6</td></tr>
+                <tr><td>7</td><td>8</td><td>9</td></tr>
+              </table>
+            </div>
+          </section>
+        </main>
 
           <div class="card">
             <h4>Masse lenker med samme tekst</h4>
@@ -121,12 +120,12 @@
       </tr>
     </table>
 
-    <div style="text-align:center; padding: 10px; background: rgba(255,255,255,0.6)">
+    <footer>
       <!-- bevisst: kontaktinfo kun i bilde uten alt-tekst -->
       <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Facebook_icon.svg">
       <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Twitter_logo.svg">
       <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
       <p style="font-size:10px; color:#bfbfbf">© 2025 ACME</p>
-    </div>
+    </footer>
   </body>
 </html>
